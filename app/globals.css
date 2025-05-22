@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Instead of importing via CSS, we'll use Next.js font loading */
+
+@layer base {
+  :root {
+    --background: 260 25% 5%;
+    --foreground: 260 10% 98%;
+    --card: 260 25% 7%;
+    --card-foreground: 260 10% 98%;
+    --popover: 260 25% 7%;
+    --popover-foreground: 260 10% 98%;
+    --primary: 260 100% 65%;
+    --primary-foreground: 260 10% 98%;
+    --secondary: 260 30% 15%;
+    --secondary-foreground: 260 10% 98%;
+    --muted: 260 30% 15%;
+    --muted-foreground: 260 10% 60%;
+    --accent: 260 30% 15%;
+    --accent-foreground: 260 10% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 260 10% 98%;
+    --border: 260 30% 20%;
+    --input: 260 30% 20%;
+    --ring: 260 100% 65%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-weight: 700;
+  }
+  code,
+  pre,
+  .font-mono {
+    font-family: var(--font-jetbrains-mono), monospace;
+  }
+}
+
+.glow-text {
+  text-shadow: 0 0 15px rgba(149, 76, 233, 0.7);
+}
+
+.glow-card {
+  box-shadow: 0 0 20px rgba(149, 76, 233, 0.2);
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-violet-600;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at center, rgba(149, 76, 233, 0.2) 0%, transparent 70%);
+}
+
+.grid-pattern {
+  background-image: linear-gradient(rgba(149, 76, 233, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(149, 76, 233, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glass-card {
+  background: rgba(30, 20, 50, 0.5);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(149, 76, 233, 0.2);
+  box-shadow: 0 8px 32px rgba(149, 76, 233, 0.1);
+}
+
+.glass-effect {
+  background: rgba(30, 20, 50, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(149, 76, 233, 0.2);
+}
+
+.purple-glow {
+  box-shadow: 0 0 15px rgba(149, 76, 233, 0.5);
+}
+
+.hexagon-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5L55 20v20L30 55 5 40V20L30 5z' fill='none' stroke='rgba(149, 76, 233, 0.1)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.spline-container {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  position: relative;
+}
+
+.spline-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.web3-button {
+  background: linear-gradient(135deg, rgba(149, 76, 233, 0.8), rgba(98, 58, 162, 0.8));
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(149, 76, 233, 0.3);
+  box-shadow: 0 4px 20px rgba(149, 76, 233, 0.3);
+  transition: all 0.3s ease;
+}
+
+.web3-button:hover {
+  background: linear-gradient(135deg, rgba(149, 76, 233, 0.9), rgba(98, 58, 162, 0.9));
+  box-shadow: 0 4px 25px rgba(149, 76, 233, 0.5);
+  transform: translateY(-2px);
+}
+
+.web3-input {
+  background: rgba(30, 20, 50, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(149, 76, 233, 0.2);
+  transition: all 0.3s ease;
+}
+
+.web3-input:focus {
+  border-color: rgba(149, 76, 233, 0.5);
+  box-shadow: 0 0 0 2px rgba(149, 76, 233, 0.2);
+}
+
+.cyber-border {
+  position: relative;
+  border: 1px solid rgba(149, 76, 233, 0.3);
+}
+
+.cyber-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, rgba(149, 76, 233, 0.5), transparent, rgba(149, 76, 233, 0.5));
+  z-index: -1;
+  animation: border-glow 3s linear infinite;
+}
+
+@keyframes border-glow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
